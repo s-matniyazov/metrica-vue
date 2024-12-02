@@ -20,22 +20,21 @@
         </li>
 
         <li class="dropdown notification-list">
-          <a class="nav-link dropdown-toggle arrow-none nav-icon" data-bs-toggle="dropdown" href="#" role="button"
-             aria-haspopup="false" aria-expanded="false">
-            <i class="ti ti-mail"></i>
+          <a class="nav-link dropdown-toggle arrow-none nav-icon" href="#">
+            <i class="mdi mdi-email"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-end dropdown-lg pt-0">
 
             <h6 class="dropdown-item-text font-15 m-0 py-3 border-bottom d-flex justify-content-between align-items-center">
               Emails <span class="badge bg-soft-primary badge-pill">3</span>
             </h6>
-            <div class="notification-menu" data-simplebar>
+            <div class="notification-menu">
 
               <a href="#" class="dropdown-item py-3">
                 <small class="float-end text-muted ps-2">2 min ago</small>
                 <div class="media">
                   <div class="avatar-md bg-soft-primary">
-                    <img src="@/assets/logo.svg" alt="" class="thumb-sm rounded-circle">
+                    <img src="@/assets/images/user/user-1.png" alt="" class="thumb-sm rounded-circle">
                   </div>
                   <div class="media-body align-self-center ms-2 text-truncate">
                     <h6 class="my-0 fw-normal text-dark">Your order is placed</h6>
