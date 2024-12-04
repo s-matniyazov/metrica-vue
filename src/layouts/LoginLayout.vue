@@ -104,6 +104,7 @@
 
 import {ref} from "vue";
 import router from "@/router/index.js";
+import axios from 'axios'
 
 const login = ref("admin");
 const password = ref("admin");
@@ -116,6 +117,23 @@ const onSubmit = (e) => {
   } else {
     alert("WRONG!!!")
   }
+
+  return;
+  axios.post("http://10.50.70.200:8088/myapi/", {
+    "method": "user.get_usermenus",
+    "params": {
+      "user_id": 1
+    }
+  })
+      .then((res) => {
+        console.log(res);
+        alert("SUCCESS")
+      })
+      .catch((e) => {
+        console.log(e);
+        alert("ERROR -- " + e)
+      });
+
 }
 
 </script>
