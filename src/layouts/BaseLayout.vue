@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <main class="main" id="top">
     <menu-bar/>
 
     <top-navbar></top-navbar>
 
     <router-view/>
-  </div>
+  </main>
 </template>
 
 <script setup>

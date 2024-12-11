@@ -83,7 +83,6 @@
               <div class="col-md-7 col-xl-9 col-lg-8  p-0 vh-100 d-flex justify-content-center auth-bg">
                 <div class="accountbg d-flex align-items-center">
                   <div class="account-title text-center text-white">
-                    <img src="@/assets/logo.svg" alt="" class="thumb-sm">
                     <h4 class="mt-3 text-white">Welcome To <span class="text-warning">Taskwise</span></h4>
                     <h1 class="text-white">Let's Get Started</h1>
                     <p class="font-18 mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam laoreet
@@ -98,6 +97,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
@@ -112,22 +112,21 @@ const password = ref("admin");
 const onSubmit = (e) => {
   e.preventDefault();
 
-  if (login.value === "admin" && password.value === "admin") {
-    router.push({path: "/home"})
-  } else {
-    alert("WRONG!!!")
-  }
-
+  router.push({path: "/home"})
   return;
-  axios.post("http://10.50.70.200:8088/myapi/", {
+
+  axios.post("http://10.50.70.200:8088/myapp/api", {
     "method": "user.get_usermenus",
     "params": {
       "user_id": 1
     }
   })
       .then((res) => {
-        console.log(res);
-        alert("SUCCESS")
+        if (login.value === "admin" && password.value === "admin") {
+          router.push({path: "/home"})
+        } else {
+          alert("WRONG!!!")
+        }
       })
       .catch((e) => {
         console.log(e);

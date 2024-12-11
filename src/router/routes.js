@@ -1,15 +1,14 @@
-import LoginLayout from "@/layouts/LoginLayout.vue";
-import BaseLayout from "@/layouts/BaseLayout.vue";
-import CustomersPage from "@/pages/customers/CustomersPage.vue";
-
 const routes = [
-    {path: '/login', component: LoginLayout},
-    {path: '/', component: LoginLayout},
+    {path: '/login', component: import('@/layouts/LoginLayout.vue')},
+    {path: '/', component: import('@/layouts/LoginLayout.vue')},
     {
         path: '/home',
-        component: BaseLayout,
+        component: import('@/layouts/BaseLayout.vue'),
         children: [
-            {path: '/customers', component: CustomersPage}
+            {path: '/customers', component: import('@/pages/customers/CustomersPage.vue')},
+            {path: '/timeline', component: import('@/pages/pages/TimeLinePage.vue')},
+            {path: '/members', component: import('@/pages/pages/MembersPage.vue')},
+            {path: '/notifications', component: import('@/pages/pages/NotificationsPage.vue')},
         ]
     },
 ]
