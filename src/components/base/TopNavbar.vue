@@ -477,6 +477,7 @@
 
 <script setup>
 
+import DropdownMenu from "@/components/base/DropdownMenu.vue";
 </script>
 
 <style scoped>

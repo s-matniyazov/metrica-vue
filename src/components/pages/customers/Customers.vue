@@ -71,7 +71,7 @@
 
 <script setup>
 import {ref} from "vue";
-import image from "@/assets/images/user/user-1.png";
+import image from "../../../../../metrica-que/src/assets/images/user/user-1.png";
 
 const columns = ref([
   "Customer",

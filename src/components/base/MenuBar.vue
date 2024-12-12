@@ -1,83 +1,31 @@
 <template>
-
   <nav class="navbar navbar-vertical navbar-expand-lg">
+    {{routerStore.currentRouter}}
     <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
       <div class="navbar-vertical-content">
         <ul class="navbar-nav flex-column" id="navbarVerticalNav">
           <li class="nav-item">
 
             <div class="nav-item-wrapper">
-              <router-link class="nav-link dropdown-indicator label-1" to="#nv-home" role="button"
-                           data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-home">
-                <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper">
-                    <span class="fas fa-caret-right dropdown-indicator-icon"></span>
-                  </div>
-                  <span class="nav-link-icon">
-                    <span data-feather="pie-chart"></span>
-                  </span>
-                  <span class="nav-link-text">Home</span>
-                </div>
-              </router-link>
-              <div class="parent-wrapper label-1">
-                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-home">
-                  <li class="collapsed-nav-item-title d-none">Home</li>
-                  <li class="nav-item">
-                    <router-link class="nav-link" to="../index">
-                      <div class="d-flex align-items-center"><span class="nav-link-text">E commerce</span></div>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-link" to="../dashboard/project-management">
-                      <div class="d-flex align-items-center"><span class="nav-link-text">Project management</span>
-                      </div>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-link" to="../dashboard/crm">
-                      <div class="d-flex align-items-center"><span class="nav-link-text">CRM</span></div>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-link" to="../dashboard/travel-agency">
-                      <div class="d-flex align-items-center"><span class="nav-link-text">Travel agency</span></div>
-                    </router-link>
-                  </li>
-                  <li class="nav-item">
-                    <router-link class="nav-link" to="../apps/social/feed">
-                      <div class="d-flex align-items-center"><span class="nav-link-text">Social feed</span></div>
-                    </router-link>
-                  </li>
-                </ul>
-              </div>
+              <DropdownMenu v-model="routerStore.currentRouter" menu-title="Home" :list="homeLinks"/>
             </div>
           </li>
 
           <li class="nav-item">
-            <!-- label-->
             <p class="navbar-vertical-label">Apps</p>
             <hr class="navbar-vertical-line"/>
             <div class="nav-item-wrapper">
-              <router-link class="nav-link dropdown-indicator label-1" to="#nv-e-commerce"
-                           role="button" data-bs-toggle="collapse" aria-expanded="false"
-                           aria-controls="nv-e-commerce">
-                <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
-                  <span
-                      class="nav-link-icon"><span data-feather="shopping-cart"></span></span><span
-                    class="nav-link-text">E commerce</span>
-                </div>
-              </router-link>
+              <DropdownMenu menu-title="E commerce" :list="eCommerceLinks"/>
               <div class="parent-wrapper label-1">
                 <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-e-commerce">
                   <li class="collapsed-nav-item-title d-none">E commerce</li>
                   <li class="nav-item">
+                    <DropdownMenu menu-title="Admin" :list="homeLinks"/>
                     <router-link class="nav-link dropdown-indicator" to="#nv-admin"
                                  data-bs-toggle="collapse" aria-expanded="true" aria-controls="nv-admin">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Admin</span>
                       </div>
@@ -131,7 +79,7 @@
                                  data-bs-toggle="collapse" aria-expanded="true" aria-controls="nv-customer">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Customer</span>
                       </div>
@@ -212,8 +160,8 @@
               <router-link class="nav-link dropdown-indicator label-1" to="#nv-CRM" role="button"
                            data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-CRM">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="phone"></span></span><span
                     class="nav-link-text">CRM</span>
@@ -270,8 +218,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-project-management">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="clipboard"></span></span><span
                     class="nav-link-text">Project management</span>
@@ -321,8 +269,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-travel-agency">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="briefcase"></span></span><span
                     class="nav-link-text">Travel agency</span>
@@ -341,7 +289,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-hotel">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Hotel</span>
                       </div>
@@ -354,7 +302,7 @@
                                        aria-controls="nv-hotel-admin">
                             <div class="d-flex align-items-center">
                               <div class="dropdown-indicator-icon-wrapper"><span
-                                  class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                                  class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                               <span
                                   class="nav-link-text">Admin</span>
                             </div>
@@ -398,7 +346,7 @@
                                        aria-controls="nv-hotel-customer">
                             <div class="d-flex align-items-center">
                               <div class="dropdown-indicator-icon-wrapper"><span
-                                  class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                                  class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                               <span
                                   class="nav-link-text">Customer</span>
                             </div>
@@ -458,7 +406,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-flight">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Flight</span>
                       </div>
@@ -488,7 +436,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-trip">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Trip</span>
                       </div>
@@ -530,8 +478,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-email">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="mail"></span></span><span
                     class="nav-link-text">Email</span>
@@ -563,8 +511,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-events">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="bookmark"></span></span><span
                     class="nav-link-text">Events</span>
@@ -591,8 +539,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-kanban">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="trello"></span></span><span
                     class="nav-link-text">Kanban</span>
@@ -624,8 +572,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-social">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="share-2"></span></span><span
                     class="nav-link-text">Social</span>
@@ -652,8 +600,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-gallery">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="image"></span></span><span
                     class="nav-link-text">Gallery</span>
@@ -700,8 +648,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-file-manager">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="folder"></span></span><span class="nav-link-text">File
                       manager</span><span
@@ -750,8 +698,8 @@
               <router-link class="nav-link dropdown-indicator label-1" to="#nv-faq" role="button"
                            data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-faq">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="help-circle"></span></span><span
                     class="nav-link-text">Faq</span>
@@ -778,8 +726,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-landing">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="globe"></span></span><span
                     class="nav-link-text">Landing</span>
@@ -806,8 +754,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-pricing">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="tag"></span></span><span
                     class="nav-link-text">Pricing</span>
@@ -859,8 +807,8 @@
             <div class="nav-item-wrapper">
               <router-link class="nav-link dropdown-indicator label-1" to="/errors">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="alert-triangle"></span></span><span
                     class="nav-link-text">Errors</span>
@@ -892,8 +840,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-authentication">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="lock"></span></span><span
                     class="nav-link-text">Authentication</span>
@@ -907,7 +855,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-simple">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Simple</span>
                       </div>
@@ -960,7 +908,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-split">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Split</span>
                       </div>
@@ -1013,7 +961,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-Card">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Card</span>
                       </div>
@@ -1069,8 +1017,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-layouts">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="layout"></span></span><span
                     class="nav-link-text">Layouts</span>
@@ -1144,8 +1092,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-forms">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="file-text"></span></span><span
                     class="nav-link-text">Forms</span>
@@ -1159,7 +1107,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-basic">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Basic</span>
                       </div>
@@ -1212,7 +1160,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-advance">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Advance</span>
                       </div>
@@ -1279,8 +1227,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-icons">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="grid"></span></span><span
                     class="nav-link-text">Icons</span>
@@ -1312,8 +1260,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-tables">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="columns"></span></span><span
                     class="nav-link-text">Tables</span>
@@ -1345,8 +1293,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-ECharts">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="bar-chart-2"></span></span><span
                     class="nav-link-text">ECharts</span>
@@ -1414,8 +1362,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-components">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="package"></span></span><span
                     class="nav-link-text">Components</span>
@@ -1469,7 +1417,7 @@
                                  data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-carousel">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Carousel</span>
                       </div>
@@ -1515,7 +1463,7 @@
                                  aria-controls="nv-navs-_and_-Tabs">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Navs &amp; Tabs</span>
                       </div>
@@ -1609,8 +1557,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-utilities">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="tool"></span></span><span
                     class="nav-link-text">Utilities</span>
@@ -1725,8 +1673,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-multi-level">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="layers"></span></span><span class="nav-link-text">Multi
                       level</span>
@@ -1741,7 +1689,7 @@
                                  aria-controls="nv-level-two">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Level two</span>
                       </div>
@@ -1767,7 +1715,7 @@
                                  aria-controls="nv-level-three">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Level three</span>
                       </div>
@@ -1785,7 +1733,7 @@
                                        aria-controls="nv-item-4">
                             <div class="d-flex align-items-center">
                               <div class="dropdown-indicator-icon-wrapper"><span
-                                  class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                                  class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                               <span
                                   class="nav-link-text">Item 4</span>
                             </div>
@@ -1816,7 +1764,7 @@
                                  aria-controls="nv-level-four">
                       <div class="d-flex align-items-center">
                         <div class="dropdown-indicator-icon-wrapper"><span
-                            class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                            class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                         <span
                             class="nav-link-text">Level four</span>
                       </div>
@@ -1834,7 +1782,7 @@
                                        aria-controls="nv-item-7">
                             <div class="d-flex align-items-center">
                               <div class="dropdown-indicator-icon-wrapper"><span
-                                  class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                                  class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                               <span
                                   class="nav-link-text">Item 7</span>
                             </div>
@@ -1853,7 +1801,7 @@
                                              aria-controls="nv-item-9">
                                   <div class="d-flex align-items-center">
                                     <div class="dropdown-indicator-icon-wrapper"><span
-                                        class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                                        class="fa fa-caret-right dropdown-indicator-icon"></span></div>
                                     <span
                                         class="nav-link-text">Item 9</span>
                                   </div>
@@ -1903,8 +1851,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-customization">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="settings"></span></span><span
                     class="nav-link-text">Customization</span>
@@ -1946,8 +1894,8 @@
                            role="button" data-bs-toggle="collapse" aria-expanded="false"
                            aria-controls="nv-layouts-doc">
                 <div class="d-flex align-items-center">
-                  <div class="dropdown-indicator-icon-wrapper"><span
-                      class="fas fa-caret-right dropdown-indicator-icon"></span></div>
+                  <div class="dropdown-indicator-icon-wrapper"><i
+                      class="fa fa-caret-right dropdown-indicator-icon"></i></div>
                   <span
                       class="nav-link-icon"><span data-feather="table"></span></span><span class="nav-link-text">Layouts
                       doc</span>
@@ -2028,10 +1976,20 @@
 
 <script setup>
 import {ref} from "vue";
+import DropdownMenu from "@/components/base/DropdownMenu.vue";
+import {useRouterStore} from "@/stores/router-store.js";
 
-const title = "sdfsdf";
+const routerStore = useRouterStore();
 
-const menuLinks = ref([]);
+const homeLinks = ref([
+  {name: 'E commerce', link: 'home/e-commerce'},
+  {name: 'Project management', link: 'home/project-management'},
+  {name: 'Travel agency', link: 'home/travel-agency'},
+  {name: 'Social feed', link: 'home/social-feed'},
+]);
+const eCommerceLinks = ref([
+    {name: 'Admin', link: ''},
+]);
 
 </script>
 
