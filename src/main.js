@@ -7,7 +7,7 @@ import './assets/css/user.min.css'
 import './assets/css/theme.min.css'
 import './assets/css/line.css'
 
-import './index.css'
+import '../node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css';
 
 const pinia = createPinia()
 

@@ -19,7 +19,7 @@
         <form class="position-relative" data-bs-toggle="search" data-bs-display="static"><input
             class="form-control search-input fuzzy-search rounded-pill form-control-sm" type="search"
             placeholder="Search..." aria-label="Search" />
-          <span class="fas fa-search search-box-icon"></span>
+          <span class="fa fa-search search-box-icon"></span>
         </form>
         <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
              data-bs-dismiss="search"><button class="btn btn-link p-0" aria-label="Close"></button></div>
@@ -50,7 +50,7 @@
               <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center"
                                    href="../apps/e-commerce/landing/product-details.html">
                 <div class="file-thumbnail me-2"><img class="h-100 w-100 object-fit-cover rounded-3"
-                                                      src="../assets/img/products/60x60/3.png" alt="" /></div>
+                                                      src="@/assets/logo.svg" alt="" /></div>
                 <div class="flex-1">
                   <h6 class="mb-0 text-body-highlight title">MacBook Air - 13вЂі</h6>
                   <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
@@ -60,7 +60,7 @@
               </a>
                 <a class="dropdown-item py-2 d-flex align-items-center"
                    href="../apps/e-commerce/landing/product-details.html">
-                  <div class="file-thumbnail me-2"><img class="img-fluid" src="../assets/img/products/60x60/3.png"
+                  <div class="file-thumbnail me-2"><img class="img-fluid" src="@/assets/logo.svg"
                                                         alt="" /></div>
                   <div class="flex-1">
                     <h6 class="mb-0 text-body-highlight title">MacBook Pro - 13вЂі</h6>
@@ -112,7 +112,7 @@
               </h6>
               <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="members.html">
                 <div class="avatar avatar-l status-online  me-2 text-body">
-                  <img class="rounded-circle " src="../assets/img/team/40x40/10.webp" alt="" />
+                  <img class="rounded-circle " src="@/assets/logo.svg" alt="" />
                 </div>
                 <div class="flex-1">
                   <h6 class="mb-0 text-body-highlight title">Carry Anna</h6>
@@ -121,7 +121,7 @@
               </a>
                 <a class="dropdown-item py-2 d-flex align-items-center" href="members.html">
                   <div class="avatar avatar-l  me-2 text-body">
-                    <img class="rounded-circle " src="../assets/img/team/40x40/12.webp" alt="" />
+                    <img class="rounded-circle " src="@/assets/logo.svg" alt="" />
                   </div>
                   <div class="flex-1">
                     <h6 class="mb-0 text-body-highlight title">John Smith</h6>
@@ -165,263 +165,10 @@
               data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Switch theme"
               style="height:32px;width:32px;"><span class="icon" data-feather="sun"></span></label></div>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="#" style="min-width: 2.25rem" role="button" data-bs-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside"><span class="d-block"
-                                                                                           style="height:20px;width:20px;"><span data-feather="bell"
-                                                                                                                                 style="height:20px;width:20px;"></span></span></a>
-          <div
-              class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
-              id="navbarDropdownNotfication" aria-labelledby="navbarDropdownNotfication">
-            <div class="card position-relative border-0">
-              <div class="card-header p-2">
-                <div class="d-flex justify-content-between">
-                  <h5 class="text-body-emphasis mb-0">Notifications</h5><button
-                    class="btn btn-link p-0 fs-9 fw-normal" type="button">Mark all as read</button>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <div class="scrollbar-overlay" style="height: 27rem;">
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3"><img class="rounded-circle"
-                                                                             src="../assets/img/team/40x40/30.webp" alt="" /></div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Jessie Samson</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ’¬</span>Mentioned you in a comment.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10m</span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">10:41 AM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3">
-                          <div class="avatar-name rounded-circle"><span>J</span></div>
-                        </div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Jane Foster</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ“…</span>Created an event.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20m</span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">10:20 AM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3"><img class="rounded-circle avatar-placeholder"
-                                                                             src="../assets/img/team/40x40/avatar.webp" alt="" /></div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Jessie Samson</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ‘Ќ</span>Liked your comment.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">1h</span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">9:30 AM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3"><img class="rounded-circle"
-                                                                             src="../assets/img/team/40x40/57.webp" alt="" /></div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Kiera Anderson</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ’¬</span>Mentioned you in a comment.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"></span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">9:11 AM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3"><img class="rounded-circle"
-                                                                             src="../assets/img/team/40x40/59.webp" alt="" /></div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Herman Carter</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ‘¤</span>Tagged you in a comment.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"></span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">10:58 PM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-2 px-sm-3 py-3 notification-card position-relative read ">
-                    <div class="d-flex align-items-center justify-content-between position-relative">
-                      <div class="d-flex">
-                        <div class="avatar avatar-m status-online me-3"><img class="rounded-circle"
-                                                                             src="../assets/img/team/40x40/58.webp" alt="" /></div>
-                        <div class="flex-1 me-sm-3">
-                          <h4 class="fs-9 text-body-emphasis">Benjamin Button</h4>
-                          <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
-                              class='me-1 fs-10'>рџ‘Ќ</span>Liked your comment.<span
-                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"></span></p>
-                          <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
-                              class="fw-bold">10:18 AM </span>August 7,2021</p>
-                        </div>
-                      </div>
-                      <div class="dropdown notification-dropdown"><button
-                          class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none" type="button"
-                          data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false"
-                          data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
-                        <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as unread</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer p-0 border-top border-translucent border-0">
-                <div class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"><a class="fw-bolder"
-                                                                                                   href="notifications.html">Notification history</a></div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link" id="navbarDropdownNindeDots" href="#" role="button" data-bs-toggle="dropdown"
-             aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"><svg width="16" height="16"
-                                                                                          viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-            <circle cx="2" cy="8" r="2" fill="currentColor"></circle>
-            <circle cx="2" cy="14" r="2" fill="currentColor"></circle>
-            <circle cx="8" cy="8" r="2" fill="currentColor"></circle>
-            <circle cx="8" cy="14" r="2" fill="currentColor"></circle>
-            <circle cx="14" cy="8" r="2" fill="currentColor"></circle>
-            <circle cx="14" cy="14" r="2" fill="currentColor"></circle>
-            <circle cx="8" cy="2" r="2" fill="currentColor"></circle>
-            <circle cx="14" cy="2" r="2" fill="currentColor"></circle>
-          </svg></a>
-          <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
-               aria-labelledby="navbarDropdownNindeDots">
-            <div class="card bg-body-emphasis position-relative border-0">
-              <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
-                <div class="row text-center align-items-center gx-0 gy-0">
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/behance.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Behance</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/google-cloud.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Cloud</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/slack.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Slack</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/gitlab.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Gitlab</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/bitbucket.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">BitBucket</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/google-drive.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Drive</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/trello.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Trello</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/figma.webp" alt="" width="20" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Figma</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/twitter.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Twitter</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/pinterest.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Pinterest</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/ln.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Linkedin</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/google-maps.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Maps</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/google-photos.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Photos</p>
-                  </a></div>
-                  <div class="col-4"><a
-                      class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                      href="#!"><img src="../assets/img/nav-icons/spotify.webp" alt="" width="30" />
-                    <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Spotify</p>
-                  </a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
         <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button"
                                          data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
           <div class="avatar avatar-l ">
-            <img class="rounded-circle " src="../assets/img/team/40x40/57.webp" alt="" />
+            <img class="rounded-circle " src="@/assets/logo.svg" alt="" />
           </div>
         </a>
           <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border"
@@ -476,8 +223,6 @@
 </template>
 
 <script setup>
-
-import DropdownMenu from "@/components/base/DropdownMenu.vue";
 </script>
 
 <style scoped>
