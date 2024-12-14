@@ -1982,10 +1982,10 @@ import {useRouterStore} from "@/stores/router-store.js";
 const routerStore = useRouterStore();
 
 const homeLinks = ref([
-  {name: 'E commerce', link: 'home/e-commerce'},
-  {name: 'Project management', link: 'home/project-management'},
-  {name: 'Travel agency', link: 'home/travel-agency'},
-  {name: 'Social feed', link: 'home/social-feed'},
+  {name: 'E commerce', link: 'dashboard/e-commerce'},
+  {name: 'Project management', link: 'dashboard/project-management'},
+  {name: 'Travel agency', link: 'dashboard/travel-agency'},
+  {name: 'Social feed', link: 'dashboard/social-feed'},
 ]);
 const eCommerceLinks = ref([
     {name: 'Admin', link: ''},
